@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <script src="libs/data.js"></script>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(function() {
+            $(document).ready( function() {
+                userList.forEach(user => {
+                    document.write('<li>',user.userName,'</li>');
+                });
+            });
+        });
+    </script>
+    <body>
+        <div>User List</div>
+    </body>
+</html>

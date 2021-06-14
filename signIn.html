@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="libs/data.js"></script>
+    <style>
+        .loginForm {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 40%;
+            height: 50%;
+            box-shadow: 1px 1px 1px black;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }   
+
+        .inputForm {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 2rem;
+        }
+
+        .description {
+            width: 5rem;
+        }
+
+        .pwInput {
+            height: 2rem;
+            font-size: 1.5rem;
+            margin: 0 2rem;
+            transform: translate(5px, 0);
+            flex-grow: 1;
+        }
+        .idInput {
+            height: 2rem;
+            font-size: 1.5rem;
+            margin: 0 2rem;
+            transform: translate(5px, 0);
+            flex-grow: 1;
+        }
+
+        .loginButton {
+            margin: 2rem;
+            font-size: 2rem;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".loginButton").on("click", function() {
+                if (login($(".idInput").val(), $(".pwInput").val()) === true) {
+                    $(location).attr('href','userList.html');
+                } else {
+                    alert("아이디와 비밀번호를 확인해주세요");
+                }
+            });
+        });
+    </script>
+    <body>
+        <div class="loginForm">
+            <div class="inputForm">
+                <div class="description">ID</div>
+                <input class="idInput">
+            </div>
+            <div class="inputForm">
+                <div class="description">PW</div>
+                <input class="pwInput">
+            </div>
+            <button class="loginButton" type="button">로그인</button>
+        </div>
+    </body>
+</html>

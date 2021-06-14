@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="libs/data.js"></script>
+    <style>
+        .loginForm {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 40%;
+            height: 50%;
+            box-shadow: 1px 1px 1px black;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }   
+
+        .inputForm {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 2rem;
+        }
+
+        .description {
+            width: 5rem;
+        }
+
+        .userNameInput {
+            height: 2rem;
+            font-size: 1.5rem;
+            margin: 0 2rem;
+            transform: translate(5px, 0);
+            flex-grow: 1;
+        }
+
+        .idInput {
+            height: 2rem;
+            font-size: 1.5rem;
+            margin: 0 2rem;
+            transform: translate(5px, 0);
+            flex-grow: 1;
+        }
+
+        .pwInput {
+            height: 2rem;
+            font-size: 1.5rem;
+            margin: 0 2rem;
+            transform: translate(5px, 0);
+            flex-grow: 1;
+        }
+
+        .signUpButton {
+            margin: 2rem;
+            font-size: 2rem;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".signUpButton").on("click", function() {
+                if (register($(".userNameInput").val(), $(".idInput").val(), $(".pwInput").val())) {
+                    $(location).attr('href','userList.html');
+                } else {
+                    alert("이미 존재하는 ID입니다.");
+                }
+            });
+        });
+    </script>
+    <body>
+        <div class="loginForm">
+            <div class="inputForm">
+                <div class="description">UserName</div>
+                <input class="userNameInput">
+            </div>
+            <div class="inputForm">
+                <div class="description">ID</div>
+                <input class="idInput">
+            </div>
+            <div class="inputForm">
+                <div class="description">PW</div>
+                <input class="pwInput">
+            </div>
+            <button class="signUpButton" type="button">회원가입</button>
+        </div>
+    </body>
+</html>
