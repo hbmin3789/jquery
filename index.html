@@ -1,42 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script>
-            $(function() {
-                $("p").on("click", function() {
-                   $("p").css("color", "red");    
-                });
+    <script src="libs/data.js"></script>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(function() {
+            $(document).ready( function() {
+                $(location).attr('href','signIn.html');
             });
-
-            let userList = [];
-
-            const register = (userName, id, pw) => {
-                if (userList.find(user => user.id === id)) {
-                    return false;
-                }
-
-                userList.push({
-                    userName,
-                    id,
-                    pw
-                });
-
-                return true;
-            }
-
-            const login = (id, pw) => {
-                let user = userList.find(user => isValidUser(user, id, pw));
-                if (user) {
-                    return true;
-                }
-
-                return false;
-            }
-
-            const isValidUser = (user, id, pw) => (user.id === id && user.pw === pw);
-        </script>
-    </head>
+        });
+    </script>
     <body>
         <div>
             

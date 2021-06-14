@@ -45,6 +45,11 @@
             margin: 2rem;
             font-size: 2rem;
         }
+
+        .signUpButton {
+            margin: 2rem;
+            font-size: 2rem;
+        }
     </style>
     <script>
         $(function() {
@@ -54,6 +59,9 @@
                 } else {
                     alert("아이디와 비밀번호를 확인해주세요");
                 }
+            });
+            $(".signUpButton").on("click", function() {
+                $(location).attr('href','signUp.html');
             });
         });
     </script>
@@ -68,6 +76,7 @@
                 <input class="pwInput">
             </div>
             <button class="loginButton" type="button">로그인</button>
+            <button class="signUpButton" type="button">회원가입</button>
         </div>
     </body>
 </html>

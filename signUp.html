@@ -54,6 +54,11 @@
             margin: 2rem;
             font-size: 2rem;
         }
+
+        .returnButton {
+            margin: 2rem;
+            font-size: 2rem;
+        }
     </style>
     <script>
         $(function() {
@@ -63,6 +68,10 @@
                 } else {
                     alert("이미 존재하는 ID입니다.");
                 }
+            });
+
+            $(".returnButton").on("click", function() {
+                $(location).attr('href','signIn.html');
             });
         });
     </script>
@@ -81,6 +90,7 @@
                 <input class="pwInput">
             </div>
             <button class="signUpButton" type="button">회원가입</button>
+            <button class="returnButton" type="button">돌아가기</button>
         </div>
     </body>
 </html>
